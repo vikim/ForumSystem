@@ -6,6 +6,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ForumSystem.Web.Models
 {
+    /* 
+     * GO TO ApplicationUser in ForumSystem.Data.Models
+     * 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
@@ -17,7 +20,11 @@ namespace ForumSystem.Web.Models
             return userIdentity;
         }
     }
+    */
 
+    /* 
+     * GO TO ApplicationDbContext in ForumSystem.Data
+     * 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -30,4 +37,5 @@ namespace ForumSystem.Web.Models
             return new ApplicationDbContext();
         }
     }
+    */
 }

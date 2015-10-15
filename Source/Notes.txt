@@ -1,0 +1,12 @@
+Microsoft ASP.NET Identity EntityFramework -> for the whole project
+
+Web/Models/IdentityModels -> 
+- ApplicationDbContext.cs (Name.Data)
+- ApplicationUser.cs (Name.Data.Models)
+(changes according the previous two)
+- Web/App_Start/IdentityConfig.cs 
+- Web/App_Start/Startup.Auth.cs 
+- Web/Controllers/ManageController.cs
+- Web/Controllers/AccountController.cs
+
+Change connectionString(Web.config) -> Data Source = .; Initial Catalog = DatabaseName

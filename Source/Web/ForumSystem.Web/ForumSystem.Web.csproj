@@ -261,6 +261,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\ForumSystem.Data.Models\ForumSystem.Data.Models.csproj">
+      <Project>{a020e21a-ccc7-4e7e-afee-57d1ab5e08f2}</Project>
+      <Name>ForumSystem.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\ForumSystem.Data\ForumSystem.Data.csproj">
+      <Project>{d8821f60-e902-4091-a305-2b1b01a31aee}</Project>
+      <Name>ForumSystem.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
