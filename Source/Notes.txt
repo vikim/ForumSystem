@@ -40,4 +40,21 @@ SystemName.Data.Common.Repository
 
 -----------------------------------------------------------------------------------------------
 
+Install bootstrap theme -> cosmo
+Manage NuGet Packeges (for SystemName.Web)  -> twitter bootstrap bootwatch themes - cosmo
+BundaleConfig.cs -> bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.cosmo.css",
+                      "~/Content/site.css"));
+_Layout.cshtml ->  <div class="navbar navbar-default navbar-fixed-top">
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
 Unit of work
+
+dependency container (Ninject)
+auto mapper
+
