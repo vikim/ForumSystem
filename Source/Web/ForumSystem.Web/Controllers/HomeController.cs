@@ -14,12 +14,6 @@
     {
         private IRepository<Post> posts;
 
-        // Poor dependancy invertion
-        public HomeController()
-            : this(new GenericRepository<Post>(new ApplicationDbContext()))
-        {
-        }
-
         public HomeController(IRepository<Post> posts)
         {
             this.posts = posts;

@@ -49,7 +49,9 @@ _Layout.cshtml ->  <div class="navbar navbar-default navbar-fixed-top">
 
 -----------------------------------------------------------------------------------------------
 
-
+dependency container (Ninject)
+- install Ninject.MVC5 -> Manage NuGet Packeges (for SystemName.Web)
+- create mappings -> RegisterServices(IKernel kernel) in NinjectWebCommon 
 
 
 
