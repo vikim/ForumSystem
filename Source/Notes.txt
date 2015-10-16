@@ -33,5 +33,11 @@ View\TaskList - comments -> see all TODOs
 
 -----------------------------------------------------------------------------------------------
 
-Repository pattern
-All + deleted
+Repository pattern - do not depend on any models, it is abstract
+SystemName.Data.Common.Repository
+- IRepository.cs, IDeletableEntityRepository.cs
+- GenericRepository.cs, DeletableEntityRepository.cs
+
+-----------------------------------------------------------------------------------------------
+
+Unit of work

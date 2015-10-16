@@ -1,6 +1,7 @@
 ﻿namespace ForumSystem.Data.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@
         }
 
         // IAuditInfo, IDeletableEntity -> authomatic auditing
+        [Index]
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }
