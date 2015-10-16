@@ -54,9 +54,12 @@ dependency container (Ninject)
 - create mappings -> RegisterServices(IKernel kernel) in NinjectWebCommon 
 
 
+-----------------------------------------------------------------------------------------------
 
-Unit of work
-
-dependency container (Ninject)
 auto mapper
+- create class library -> SystemName.Web.Infrastructure
+- in SystemName.Web reference to SystemName.Web.Infrastructure
+- install AutoMapper -> Manage NuGet Packeges (for SystemName.Web and SystemName.Web.Infrastructure) SystemName.Web.Infrastructure 
+- integrate AutoMapper -> 
+
 
