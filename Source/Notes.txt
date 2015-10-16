@@ -1,12 +1,37 @@
 Microsoft ASP.NET Identity EntityFramework -> for the whole project
 
+-----------------------------------------------------------------------------------------------
+
 Web/Models/IdentityModels -> 
-- ApplicationDbContext.cs (Name.Data)
-- ApplicationUser.cs (Name.Data.Models)
+- ApplicationDbContext.cs (SysyemName.Data) -> all tables to the db
+- ApplicationUser.cs (Name.Data.Models) -> implement IAuditInfo, IDeletableEntity
 (changes according the previous two)
 - Web/App_Start/IdentityConfig.cs 
 - Web/App_Start/Startup.Auth.cs 
 - Web/Controllers/ManageController.cs
 - Web/Controllers/AccountController.cs
 
+-----------------------------------------------------------------------------------------------
+
 Change connectionString(Web.config) -> Data Source = .; Initial Catalog = DatabaseName
+
+-----------------------------------------------------------------------------------------------
+
+SystemName.Data.Common -> all common things for the models; SystemName.Data, SystemName.Data.Models have to have reference to it 
+
+-----------------------------------------------------------------------------------------------
+
+Start Migration
+- Tools\NuGet Package Manager\Package Manager Console
+- Choose SystemNsme.Data
+- Enable-Migrations
+- SystemNsme.Data.Migrations\configuration
+
+-----------------------------------------------------------------------------------------------
+
+View\TaskList - comments -> see all TODOs
+
+-----------------------------------------------------------------------------------------------
+
+Repository pattern
+All + deleted
