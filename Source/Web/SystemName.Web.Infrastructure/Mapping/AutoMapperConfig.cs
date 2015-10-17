@@ -19,6 +19,8 @@
         public void Execute()
         {
             var types = this.assembly.GetExportedTypes();
+            // the calling assembly
+            // var types = Assembly.GetCallingAssembly().GetExportedTypes();
 
             LoadStandardMappings(types);
 
