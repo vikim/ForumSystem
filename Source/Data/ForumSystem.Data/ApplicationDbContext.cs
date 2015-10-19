@@ -30,7 +30,7 @@
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
-            this.ApplyDeletableEntityRules();
+            // this.ApplyDeletableEntityRules();
             return base.SaveChanges();
         }
 
@@ -67,6 +67,7 @@
             }
         }
 
+        /*
         private void ApplyDeletableEntityRules()
         {
             // Approach via @julielerman: http://bit.ly/123661P
@@ -82,5 +83,6 @@
                 entry.State = EntityState.Modified;
             }
         }
+         */
     }
 }

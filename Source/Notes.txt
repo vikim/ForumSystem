@@ -68,3 +68,14 @@ Create a view model for home index
 - create IndexBlogPostViewModel : IMapFrom<Post>
 - add using AutoMapper.QueryableExtensions; -> index.cs
 
+-----------------------------------------------------------------------------------------------
+
+URLs
+RouteConfig.cs
+for url: "questions/{id}/{url}" -> create an empty controller Questions with Display(int id, string url) method  --->  /questions/3/proba-url
+
+for url: "questions/tagged/{tag}" -> GetByTag(string tag) method ---> /questions/tagged/tag-string
+
+
+
+

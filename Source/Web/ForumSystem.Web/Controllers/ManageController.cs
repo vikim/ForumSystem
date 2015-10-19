@@ -1,16 +1,19 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using ForumSystem.Web.Models;
-using ForumSystem.Data.Models;
-
-namespace ForumSystem.Web.Controllers
+﻿namespace ForumSystem.Web.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web;
+    using System.Web.Mvc;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin.Security;
+
+    using ForumSystem.Data.Models;
+    using ForumSystem.Web.Models;
+    using ForumSystem.Web.ViewModels.Manage;
+
     [Authorize]
     public class ManageController : Controller
     {
@@ -312,7 +315,7 @@ namespace ForumSystem.Web.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -369,6 +372,6 @@ namespace ForumSystem.Web.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }
