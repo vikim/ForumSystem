@@ -77,5 +77,14 @@ for url: "questions/{id}/{url}" -> create an empty controller Questions with Dis
 for url: "questions/tagged/{tag}" -> GetByTag(string tag) method ---> /questions/tagged/tag-string
 
 
+-----------------------------------------------------------------------------------------------
 
+Ask page
+tinymce.com
+- TinyMCE and TinyMCE.MVC -> Manage NuGet Packeges (for SystemName.Web)  - 
+- [DataType("tinymce_full")] -> ForumSystem.Web.InputModels.Questions/AskInputModel
+- [UIHint("tinymce_full")] -> ForumSystem.Web.InputModels.Questions/AskInputModel
+- @model string -> 
+
+/*content_css : "@Url.Content("~/Scripts/tinymce/css/content.css")",*/
 

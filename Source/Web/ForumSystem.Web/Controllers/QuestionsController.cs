@@ -28,7 +28,7 @@
         [HttpGet]
         public ActionResult Ask()
         {
-            return Content("GET");
+            return View();
         }
 
         [HttpPost]

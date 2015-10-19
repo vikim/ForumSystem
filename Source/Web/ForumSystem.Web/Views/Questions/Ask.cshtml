@@ -1,0 +1,18 @@
+﻿@model ForumSystem.Web.InputModels.Questions.AskInputModel
+@{
+    ViewBag.Title = "Ask question";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@using (Html.BeginForm("Ask", "Questions", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Title)
+    @Html.EditorFor(m => m.Title)
+
+    @Html.LabelFor(m => m.Content)
+    @Html.EditorFor(m => m.Content)
+
+    @Html.LabelFor(m => m.Tags)
+    @Html.EditorFor(m => m.Tags)
+}
