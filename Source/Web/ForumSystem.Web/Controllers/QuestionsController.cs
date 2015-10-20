@@ -6,24 +6,39 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using AutoMapper.QueryableExtensions;
+
     using ForumSystem.Web.InputModels.Questions;
     using ForumSystem.Data.Common.Repository;
     using ForumSystem.Data.Models;
+    using ForumSystem.Web.ViewModels.Questions;
+    using SystemName.Web.Infrastructure;
 
     public class QuestionsController : Controller
     {
         private readonly IDeletableEntityRepository<Post> posts;
 
-        public QuestionsController(IDeletableEntityRepository<Post> posts)
+        private readonly ISanitizer sanitizer;
+
+        public QuestionsController(IDeletableEntityRepository<Post> posts, ISanitizer sanitizer)
         {
             this.posts = posts;
+            this.sanitizer = sanitizer;
         }
 
         // GET: Questions by question id
         // questions/3/proba-url
         public ActionResult Display(int id, string url, int page = 1)
         {
-            return Content(id + " " + url);
+            var postViewModel = this.posts.All().Where(q => q.Id == id)
+                .Project().To<QuestionDisplayViewModel>().FirstOrDefault();
+
+            if (postViewModel == null)
+            {
+                this.HttpNotFound("No such post");
+            }
+
+            return View(postViewModel);
         }
 
         // questions/tagged/tag-string
@@ -49,7 +64,7 @@
                 var post = new Post
                 {
                     Title = input.Title,
-                    Content = input.Content
+                    Content =  this.sanitizer.Sanitize(input.Content)
                 };
 
                 this.posts.Add(post);

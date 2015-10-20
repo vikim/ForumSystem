@@ -15,6 +15,8 @@ namespace ForumSystem.Web.App_Start
     using ForumSystem.Data;
     using ForumSystem.Data.Common.Repository;
     using ForumSystem.Data.Models;
+    using ForumSystem.Web.Infrastructure;
+    using SystemName.Web.Infrastructure;
 
     public static class NinjectWebCommon 
     {
@@ -72,6 +74,8 @@ namespace ForumSystem.Web.App_Start
 
             kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(DeletableEntityRepository<>));
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+
+            kernel.Bind<ISanitizer>().To<HtmlSanitizerAdapter>();
         }        
     }
 }
