@@ -8,6 +8,8 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using Microsoft.AspNet.Identity;
+
     using ForumSystem.Web.InputModels.Questions;
     using ForumSystem.Data.Common.Repository;
     using ForumSystem.Data.Models;
@@ -50,6 +52,7 @@
         // GET-POST-REDIRECT
         // questions/ask
         [HttpGet]
+        [Authorize]
         public ActionResult Ask()
         {
             return View();
@@ -57,14 +60,19 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Ask(AskInputModel input)
         {
+
             if (ModelState.IsValid)
             {
+                var userId = this.User.Identity.GetUserId();
+
                 var post = new Post
                 {
                     Title = input.Title,
-                    Content =  this.sanitizer.Sanitize(input.Content)
+                    Content = this.sanitizer.Sanitize(input.Content),
+                    AuthorId = userId,
                 };
 
                 this.posts.Add(post);

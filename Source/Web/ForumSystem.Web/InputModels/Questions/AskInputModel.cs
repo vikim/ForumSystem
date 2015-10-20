@@ -20,6 +20,7 @@
         [UIHint("tinymce_full")]
         public string Content { get; set; }
 
+        [Required]
         [Display(Name = "Tags")]
         public string Tags { get; set; }
     }
