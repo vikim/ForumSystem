@@ -84,7 +84,21 @@ tinymce.com
 - TinyMCE and TinyMCE.MVC -> Manage NuGet Packeges (for SystemName.Web)  - 
 - [DataType("tinymce_full")] -> ForumSystem.Web.InputModels.Questions/AskInputModel
 - [UIHint("tinymce_full")] -> ForumSystem.Web.InputModels.Questions/AskInputModel
-- @model string -> 
+- @model string -> tinymce_full.cshtml, tinymce_full_compressed.cshtml
 
-/*content_css : "@Url.Content("~/Scripts/tinymce/css/content.css")",*/
+* tinymce_full.cshtml
+	- <script src="@Url.Content("~/Scripts/tinymce/tinymce.js")" type="text/javascript"></script>
+	- theme: "modern",
+	- plugins: "example,emoticons,compat3x,colorpicker,code,charmap,bbcode,advlist,anchor,autolink,autoresize,pagebreak,layer,table,save,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,template,wordcount,advlist,autosave",
+	- content_css : "@Url.Content("~/Scripts/tinymce/skins/lightgray/skin.min.css")",
+
+
+-----------------------------------------------------------------------------------------------
+
+String Editor Template
+
+ViewData["class"] -> a class from the view html elements (Ask.cshtml)
+
+
+
 

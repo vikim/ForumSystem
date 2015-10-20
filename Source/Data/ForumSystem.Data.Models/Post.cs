@@ -12,6 +12,8 @@
         [MaxLength(100)]
         public string Title { get; set; }
 
+        public string Content { get; set; }
+
         public bool IsDeleted { get; set; }
 
         public System.DateTime? DeletedOn { get; set; }
